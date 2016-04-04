@@ -1,0 +1,22 @@
+<div class="slide-container">
+  <div class="slide-page">{{currentIndex+1}}/{{::slidesCopy.length}}</div>
+  <div class="slide"
+       ng-repeat="slide in [selectedSlide]"
+       >
+    <h2>{{::slide.title}}</h2>
+    <div class="description" ng-bind-html="::slide.body"></div>
+    <img class="image" ng-src="{{:: CON.DOMAIN + slide.image.imageUrl }}" />
+  </div>
+  <div class="control">
+    <a class="control-left btn side" href="javascript:void(0)" ng-click="prev()">
+      <span>&lsaquo;</span>
+    </a>
+    <a class="control-right btn side" href="javascript:void(0)" ng-click="next()">
+      <span>&rsaquo;</span>
+    </a>
+    <div class="control-sort">
+      <button class="btn sort" ng-click="sortByAlpha()">Sort by alpha</button>
+      <button class="btn sort" ng-click="sortByDefault()">Sort by default</button>
+    </div>
+  </div>
+</div>

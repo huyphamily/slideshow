@@ -1,0 +1,15 @@
+<!-- loading text -->
+<div ng-show="main.slide.loading">
+  <h1>loading...</h1>
+</div>
+<!-- error text -->
+<div ng-show="main.slide.error">
+  <h1>An Error Occur</h1>
+  <p>{{main.slide.error}}</p>
+</div>
+<!-- slide show -->
+<slideshow ng-if="main.slide.slides && main.slide.slides.length"
+           slides="main.slide.slides"
+           track-event="main.slide.trackEvent(event)"
+           preload-image="main.slide.preloadImage(src)">
+</slideshow>
